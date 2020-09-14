@@ -1,0 +1,41 @@
+<div *ngIf="successMsg" class="alert alert-success success-msg" role="alert">
+  {{ successMsg }}
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Date of Birth</th>
+      <th scope="col">Status</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let enrollee of enrolleeList; let i = index;">
+      <tr>
+        <th>{{ enrollee.id }}</th>
+        <td>
+          <input *ngIf="editIndex === i" class="form-control" [(ngModel)]="enrollee.name" />
+          <span *ngIf="editIndex !== i" > {{ enrollee.name }}</span>
+        </td>
+        <td>
+          {{ enrollee.dob }}
+        </td>
+        <td>
+          <label class="switch">
+            <input type="checkbox" [(ngModel)]="enrollee.activeFlag" [checked]="enrollee.activeFlag"
+            [disabled]="editIndex !== i">
+            <span class="slider round"></span>
+          </label>
+        </td>
+        <td>
+          <i class="fa fa-edit mr-2" (click)="editEnrollee(i)"></i>
+          <i class="fa fa-trash mr-2" (click)="removeEnrollee(i)"></i>
+          <button *ngIf="editIndex === i" class="btn btn-primary" (click)="saveEnrollee(i)">Save</button>
+        </td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>

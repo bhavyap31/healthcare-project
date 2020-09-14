@@ -1,0 +1,62 @@
+[
+  {
+    "id": "10001",
+    "name": "John Smith",
+    "activeFlag": 1,
+    "dob": "02-04-1995"
+  },
+  {
+    "id": "1002",
+    "name": "Mathew George",
+    "activeFlag": 0,
+    "dob": "12-05-1996"
+  },
+  {
+    "id": "1003",
+    "name": "Sophy Sebastian",
+    "activeFlag": 0,
+    "dob": "02-04-1995"
+  },
+  {
+    "id": "1004",
+    "name": "Brain Smith",
+    "activeFlag": 1,
+    "dob": "15-04-2000"
+  },
+  {
+    "id": "1005",
+    "name": "Lara Washington",
+    "activeFlag": 1,
+    "dob": "30-09-1997"
+  },
+  {
+    "id": "1006",
+    "name": "Henry Blames",
+    "activeFlag": 1,
+    "dob": "02-05-1990"
+  },
+  {
+    "id": "1007",
+    "name": "Nita William",
+    "activeFlag": 1,
+    "dob": "21-12-1975"
+  },
+  {
+    "id": "1008",
+    "name": "Henry Smith",
+    "activeFlag": 1,
+    "dob": "24-12-1975"
+  },
+  {
+    "id": "1009",
+    "name": "William Smith",
+    "activeFlag": 1,
+    "dob": "16-12-1985"
+  },
+  {
+    "id": "1010",
+    "name": "Greg Johnsom",
+    "activeFlag": 1,
+    "dob": "10-12-1995"
+  }
+]
