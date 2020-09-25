@@ -14,7 +14,7 @@ export class EnrolleeService {
   constructor(private readonly _http: HttpClient) { }
 
   public getEnrolleee(): Observable<any> {
-    const url = `${ENROLLEE_API}/enrollees.json`;
+    const url = `${ENROLLEE_API}/enrollees`;
     return this._http.get<Enrollee>(url).pipe(map(resp => {
       return resp;
     }), catchError(error => {
@@ -23,13 +23,12 @@ export class EnrolleeService {
   }
 
   public updateEnrolleee(id, data: Enrollee): Observable<any> {
-    const url = `${ENROLLEE_API}/enrollees`;
+    const url = `${ENROLLEE_API}/enrollees/${id}`;
 
-    return of(data);
-    // return this._http.put(url, data).pipe(map(resp => {
-    //   return resp;
-    // }), catchError(error => {
-    //   return observableThrowError(error);
-    // }));
+    return this._http.put(url, data).pipe(map(resp => {
+      return resp;
+    }), catchError(error => {
+      return observableThrowError(error);
+    }));
   }
 }

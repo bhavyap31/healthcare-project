@@ -11,6 +11,7 @@ export class EnrolleeListComponent implements OnInit {
   public enrolleeList: Array<Enrollee> = [];
   public editIndex: number;
   public successMsg: string;
+  public errorMsg: string;
   constructor(private readonly enrolleeService: EnrolleeService) { }
 
   ngOnInit() {
@@ -42,6 +43,7 @@ export class EnrolleeListComponent implements OnInit {
         this.editIndex = undefined;
         this.enrolleeList[index] = resp;
         this.successMsg = `${resp.name} updated successfully`;
+        this.errorMsg = undefined;
         // Will replace with a toaster service
         setTimeout(() => {
           this.successMsg = undefined;
@@ -49,6 +51,10 @@ export class EnrolleeListComponent implements OnInit {
       }, error => {
         this.editIndex = undefined;
         this.successMsg = undefined;
+        this.errorMsg = error && error.error;
+        setTimeout(() => {
+          this.errorMsg = undefined;
+        }, 3000);
       });
     }
   }

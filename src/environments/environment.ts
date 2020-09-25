@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  enrolleeApiEndpoint: '../../assets/sample-data'
+  enrolleeApiEndpoint: 'http://localhost:8080'
 };
 
 /*

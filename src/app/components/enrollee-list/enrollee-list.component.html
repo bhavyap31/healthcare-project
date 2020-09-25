@@ -1,6 +1,9 @@
 <div *ngIf="successMsg" class="alert alert-success success-msg" role="alert">
   {{ successMsg }}
 </div>
+<div *ngIf="errorMsg" class="alert alert-danger error-msg" role="alert">
+  {{ errorMsg }}
+</div>
 
 <table class="table table-striped">
   <thead>
@@ -21,11 +24,11 @@
           <span *ngIf="editIndex !== i" > {{ enrollee.name }}</span>
         </td>
         <td>
-          {{ enrollee.dob }}
+          {{ enrollee.dateOfBirth || '-' }}
         </td>
         <td>
           <label class="switch">
-            <input type="checkbox" [(ngModel)]="enrollee.activeFlag" [checked]="enrollee.activeFlag"
+            <input type="checkbox" [(ngModel)]="enrollee.active" [checked]="enrollee.active"
             [disabled]="editIndex !== i">
             <span class="slider round"></span>
           </label>

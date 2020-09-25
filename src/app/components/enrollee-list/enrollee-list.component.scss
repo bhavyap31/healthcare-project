@@ -81,7 +81,15 @@ input:disabled {
 .success-msg {
   background: $green;
   color: $white;
-  position: absolute;
+  position: fixed;
+  right: 0;
+  padding: 10px;
+}
+
+.error-msg {
+  background: $red;
+  color: $white;
+  position: fixed;
   right: 0;
   padding: 10px;
 }
@@ -89,4 +97,7 @@ input:disabled {
 .btn-primary {
   padding: 5px 10px;
   font-size: 13px;
+}
+td, th {
+  text-align: center;
 }
